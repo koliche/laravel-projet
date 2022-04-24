@@ -7,6 +7,7 @@ use App\Models\Interventions;
 use App\Models\Parcelles;
 use Livewire\Component;
 use Mockery\Matcher\Any;
+use Illuminate\Support\Facades\Auth;
 
 class Question extends Component
 {   private $question1;
@@ -15,6 +16,16 @@ class Question extends Component
     private $question4;
     private $question5;
     
+    public function index()
+    {
+        if(Auth::user()->hasRole('user')){
+             return view('userdash');
+        }elseif(Auth::user()->hasRole('editor')){
+             return view('editordash');
+        }elseif(Auth::user()->hasRole('admin')){
+         return view('dashboard');
+    }
+    }
     public function render()
 
     {

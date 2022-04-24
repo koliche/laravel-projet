@@ -3,6 +3,8 @@
 use App\Http\Livewire\Agriculteur;
 use App\Http\Livewire\Employe;
 use App\Http\Livewire\Intervention;
+use App\Http\Livewire\Parcelle;
+use App\Http\Livewire\Question;
 use App\Http\Livewire\Tarif;
 use App\Models\Employes;
 use Illuminate\Support\Facades\Route;
@@ -28,9 +30,9 @@ Route::get('/dashboard', function () {
 
 //auth route for both :
 Route::group(['middleware'=>['auth']], function(){
-    Route::get('/dashboard','App\Http\Controllers\DashboardController@index')->name('dashboard');
+    Route::get('/dashboard',Question::class)->name('dashboard');
     Route::get('/dashboard/agriculteur', Agriculteur::class)->name('dashboard.agriculteur');
-    Route::get('/dashboard/parcelle', 'App\Http\Controllers\DashboardController@parcelle')->name('dashboard.parcelle');
+    Route::get('/dashboard/parcelle', Parcelle::class)->name('dashboard.parcelle');
     Route::get('/dashboard/employe', Employe::class)->name('dashboard.employe');
     Route::get('/dashboard/tarif', Tarif::class)->name('dashboard.tarif');
     Route::get('/dashboard/intervention', Intervention::class)->name('dashboard.intervention');
