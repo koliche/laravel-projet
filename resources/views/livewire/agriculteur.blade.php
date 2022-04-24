@@ -51,7 +51,6 @@
            </tbody>
        </table>
 
-
     <script>
         $(document).ready(function() {
             $('#sampleTable').DataTable({

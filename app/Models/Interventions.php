@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Tarif extends Model
+class Interventions extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'tar_euro',
+        'nb_jours',
     ];
 }
