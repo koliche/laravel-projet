@@ -30,4 +30,12 @@ class DashboardController extends Controller
    {
     return view('livewire.employe');
    }
+   public function tarif()
+   {
+    return view('livewire.tarif');
+   }
+   public function intervention()
+   {
+    return view('livewire.intervention');
+   }
 }

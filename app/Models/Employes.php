@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Employe extends Model
+class Employes extends Model
 {
     use HasFactory;
     protected $fillable = [
@@ -20,4 +20,3 @@ class Employe extends Model
         return $this->belongsTo(parcelles::class)->using(interventions::class);
     }
 }
-
