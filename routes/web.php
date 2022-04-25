@@ -6,7 +6,6 @@ use App\Http\Livewire\Intervention;
 use App\Http\Livewire\Parcelle;
 use App\Http\Livewire\Question;
 use App\Http\Livewire\Tarif;
-use App\Models\Employes;
 use Illuminate\Support\Facades\Route;
 
 /*

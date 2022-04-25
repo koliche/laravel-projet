@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Parcelles extends Model
 {
     use HasFactory;
+    protected $primaryKey = 'par_id';
     protected $fillable = [
         'par_nom',
         'par_lieu',

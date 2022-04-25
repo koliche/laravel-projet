@@ -39,14 +39,14 @@ class Question extends Component
         $this->question5=Interventions::whereBetween("int_debut",[$from,$to])->get();
        
         
-        $this->question6=Interventions::join('parcelles', 'interventions.parcelle_id', '=', 'parcelles.id')->get(['parcelles.par_nom','interventions.*']);
+        $this->question6=Interventions::join('parcelles', 'interventions.int_par_id', '=', 'parcelles.par_id')->get(['parcelles.par_nom','interventions.*']);
         
-        $this->question77=Interventions::join('employes', 'interventions.emp_nss', '=', 'employes.emp_nss')
-        ->join('parcelles', 'interventions.parcelle_id', '=', 'parcelles.id')
+        $this->question77=Interventions::join('employes', 'interventions.int_emp_nss', '=', 'employes.emp_nss')
+        ->join('parcelles', 'interventions.int_par_id', '=', 'parcelles.par_id')
         ->get(['employes.emp_nom','parcelles.par_nom','interventions.*']);
         
 
-        $this->question8 = Interventions::join('employes', 'interventions.emp_nss', '=', 'employes.emp_nss')
+        $this->question8 = Interventions::join('employes', 'interventions.int_emp_nss', '=', 'employes.emp_nss')
         ->select('employes.emp_nom','interventions.*')->where("employes.emp_nom","Pernet")->get();
         
         $this->question9 = Parcelles::sum("par_superficie");
